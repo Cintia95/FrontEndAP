@@ -1,0 +1,23 @@
+<div class="botonera">
+    
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <img id="fotoperfil"src={{persona.img}} class="img-fluid" alt="foto de perfil">
+    </div>
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
+        <p>Desarrolladora Web FullStack Jr</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <span>
+            <h2>Acerca de mí</h2>
+            <p>{{persona.descripcion}}</p>
+        </span>
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+        <button type="button" class="btn btn-dark nuevo" routerLink="/editacercade" *ngIf="isLogged">
+            <i class="bi bi-pencil-fill"></i>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+#logoAP{
+    width: 170px;
+}
+img{
+    width: 40px;
+    margin: 0 5px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.derecha{
+    display: flex;
+    align-items: center;
+}
+.redes{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+.ingreso{
+    margin: 5px 0;
+}
+button{
+    background-color: #189eff;
+    margin: 15px;
+    border-width: medium;
+    border-color: white;
+    border-radius: 20px;
+}
+/*---Para celulares---*/
+@media(max-width: 620px){
+    .container{
+        flex-direction: column;
+    }
+    .derecha{
+        flex-direction: column;
+    }
+}
+

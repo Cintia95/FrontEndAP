@@ -1,0 +1,44 @@
+.row{
+    padding: 15px;
+}
+div{
+    background-color: #18b4ed;
+    text-align: center;
+}
+#nombre{
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 15px;
+}
+.botonera{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.nuevo{
+    background-color: #071b5d;
+    margin-top: 10px;
+}
+
+@media (min-width:576px){
+    #fotoperfil{
+        position:absolute;
+        width: 15%;
+        border-radius: 30%;
+        left: 2%;
+    }
+}
+
+@media (min-width:1050px){
+    #fotoperfil{
+        top: 85%;
+    }
+}
+
+@media (max-width: 575px){
+    #fotoperfil{
+        position:relative;
+        width: 50%;
+        border-radius: 30%;
+    }
+}
