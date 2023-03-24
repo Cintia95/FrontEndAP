@@ -1,21 +1,26 @@
 <div class="row">
     <h2>Proyectos realizados</h2>
-    <div class="contenedor">
-        <h3>Sistema de gestión de club</h3>
-        <div class="col-sm-12 col-md-4 col-lg-4 parte1">     
-            <p>Proyecto realizado para gestionar el club de conquistadores y sus miembros. <br>Realizado utilizando HTML, CSS, Javascript, PHP, mySQL.</p>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 offset-md-1 offset-lg-1 parte2">
-            <a href="https://club-de-conquistadores.000webhostapp.com/index.php" target="_blank"><img src="../../../assets/gestion-de-club.PNG" class="img-fluid img-proyecto" alt="pagina principal de sistema de gestion de club"></a>            
-        </div>
+    <div class="col-lg-2 col-md-2">
+        <button type="button" class="btn btn-dark nuevo" routerLink="/nuevoproy" *ngIf="isLogged">
+            <i class="bi bi-plus-circle"></i> Proyecto
+        </button>
     </div>
-    <div class="contenedor">
-        <h3>Portfolio personal</h3>
-        <div class="col-sm-12 col-md-4 col-lg-4 parte1">     
-            <p>Proyecto final de Argentina Programa #YoProgramo</p>
+    <div class="contenedor" *ngFor="let proyectos of proyectos">
+        <hr>
+        <div class="row g-0 text-center">
+            <div class="col-md-10 col-sm-12"><h3>{{proyectos.nombreP}}</h3></div>
+            <div class="col-md-2 col-sm-12" *ngIf="isLogged">
+                <button class="btn btn-light" routerLink="/editproy/{{proyectos.id}}">
+                    <i class="bi bi-pencil-fill"></i></button>
+                <button class="btn btn-danger" (click)="delete(proyectos.id)">
+                    <i class="bi bi-trash-fill"></i></button>
+            </div>            
         </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 offset-md-1 offset-lg-1 parte2">
-            <a href="#inicio"><img src="../../../assets/proyectoAP.PNG" class="img-fluid img-proyecto" alt="pagina principal de sistema de gestion de club"></a>            
+        <div class="col-md-4 col-sm-12 parte1">     
+            <p>{{proyectos.descripcionP}}</p>
+        </div>
+        <div class="col-md-6 col-sm-12 offset-md-1 offset-lg-1 parte2">
+            <a href={{proyectos.enlaceP}} target="_blank"><img src={{proyectos.imgP}} class="img-fluid img-proyecto" alt="captura de proyecto"></a>            
         </div>
     </div>
 </div>

@@ -14,3 +14,16 @@
 .img-proyecto{
     box-shadow: 5px 5px 20px rgb(71, 98, 104);
 }
+hr{
+    color: #ffffff;
+    margin-top: 10px;
+    margin-left: 15%;
+    width: 70%;
+    height: 20px;
+}
+.nuevo{
+    background-color: #071b5d;
+}
+.btn{
+    margin: 3px;
+}

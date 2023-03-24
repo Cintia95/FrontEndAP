@@ -32,9 +32,11 @@ export class HysComponent implements OnInit {
   }
 
   delete(id: number){
-    if(id != undefined){
+    var resp = confirm("¿Está seguro que desea eliminar esta habilidad?")
+    if( id != undefined && resp){
       this.skillS.delete(id).subscribe(
         data => {
+          alert("Eliminado correctamente");
           this.cargarSkills();
         }, err => {
           alert("No se pudo borrar la skill");

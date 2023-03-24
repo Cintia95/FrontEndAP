@@ -32,9 +32,11 @@ export class EducacionComponent implements OnInit {
   }
 
   delete(id?: number){
-    if( id != undefined){
+    var resp = confirm("¿Está seguro que desea eliminar esta educación?")
+    if( id != undefined && resp){
       this.educacionS.delete(id).subscribe(
         data => {
+          alert("Eliminado correctamente");
           this.cargarEducacion();
         }, err => {
           alert("No se pudo eliminar");

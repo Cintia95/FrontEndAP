@@ -1,4 +1,4 @@
-<section class="vh-100 gradient-custom" *ngIf="persona">
+<section class="gradient-custom" *ngIf="persona">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -20,16 +20,22 @@
                     <label for="apellido">Apellido</label>
                     <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="persona.apellido" required>
                   </div>
+  
+                  <div class="form-outline mb-4">
+                    <label for="titulo">Título</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="persona.titulo" required>
+                  </div>
+
                   <div class="form-outline mb-4">
                     <label for="descripcion">Descripcion</label>
                     <textarea class="form-control" id="descripcion" name="descripcion" rows="3" [(ngModel)]="persona.descripcion" required></textarea>
-                    
                   </div>
   
                   <div class="form-outline mb-4">
                     <label for="img">Imagen</label>
                     <input type="file" class="form-control" id="img" name="img" [(ngModel)]="persona.img" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" required>
                   </div>
+
                   <div class="imagen">
                     <img [src]="imageService.url" width="100px">
                   </div>

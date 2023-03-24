@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Proyectos {\n  constructor(nombreP, descripcionP, imgP, enlaceP) {\n    this.nombreP = nombreP;\n    this.descripcionP = descripcionP;\n    this.imgP = imgP;\n    this.enlaceP = enlaceP;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
