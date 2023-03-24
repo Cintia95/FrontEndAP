@@ -25,21 +25,11 @@
                     <label for="enlaceP">Enlace al proyecto</label>
                     <input type="text" class="form-control" id="enlaceP" name="enlaceP" [(ngModel)]="proyecto.enlaceP" required>
                   </div>
-
-                  <div class="form-outline mb-4">
-                    <label for="imgP">Link de captura del proyecto</label>
-                    <input type="text" class="form-control" id="imgP" name="imgP" [(ngModel)]="proyecto.imgP" required>
-                  </div>
                   
-                  <!-- <div class="form-outline mb-4">
+                  <div class="form-outline mb-4">
                     <label for="imgP">Captura</label>
-                    <input type="file" class="form-control" id="imgP" name="imgP" [(ngModel)]="proyecto.imgP" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" required>
+                    <input type="file" class="form-control" id="imgP" name="imgP" [(ngModel)]="proyecto.imgP" (change)="uploadImagen($event)" accept=".jpg, .jpeg, .png" required>
                   </div>
-
-                  <div class="imagen">
-                    <img [src]="imageService.url" width="100px">
-                  </div>
-                  <br> -->
   
                   <button class="btn btn-primary text-white btn-lg btn-block" type="submit">Actualizar</button>
   

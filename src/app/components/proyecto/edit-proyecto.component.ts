@@ -28,7 +28,7 @@ export class EditProyectoComponent implements OnInit{
 
   onUpdate(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    // this.proyecto.imgP = this.imageService.url
+    this.proyecto.imgP = this.sProyecto.urlP
     this.sProyecto.update(id, this.proyecto).subscribe(
       data =>{
         alert("Actualizado correctamente");
@@ -40,10 +40,13 @@ export class EditProyectoComponent implements OnInit{
     )
   }
 
-  // uploadImage($event:any){
-  //   const id = this.activatedRouter.snapshot.params['id'];
-  //   const name = "proyecto_" + id;
-  //   this.imageService.uploadImage($event, name)
-  // }
+  uploadImagen($event:any){
+    alert("Espere un momento a que se suba la imagen");
+    const id = this.activatedRouter.snapshot.params['id'];
+    const name = "proyecto_" + id;
+    this.sProyecto.uploadImagen($event, name)
+  }
+
+  
 
 }

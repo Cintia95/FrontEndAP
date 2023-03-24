@@ -14,6 +14,7 @@ export class NewProyectoComponent implements OnInit {
   descripcionP: string = '';
   imgP: string = '';
   enlaceP: string = '';
+  public archivos: any = []
 
   constructor(private sProyecto: ProyectosService, private router: Router, public imageService: ImageService) { }
 
