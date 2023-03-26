@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { getDownloadURL, list, Storage } from '@angular/fire/storage';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ref } from '@firebase/storage';
 import { Proyectos } from 'src/app/model/proyectos';
 import { ImageService } from 'src/app/service/image.service';
 import { ProyectosService } from 'src/app/service/proyectos.service';
@@ -16,9 +18,10 @@ export class NewProyectoComponent implements OnInit {
   enlaceP: string = '';
   public archivos: any = []
 
-  constructor(private sProyecto: ProyectosService, private router: Router, public imageService: ImageService) { }
+  constructor(public sProyecto: ProyectosService, private router: Router, public imageService: ImageService, private storage: Storage) { }
 
   ngOnInit(): void {
+    document.getElementById('imagen2').style.display = 'none';
   }
 
   onCreate(): void {
@@ -35,9 +38,17 @@ export class NewProyectoComponent implements OnInit {
     )
   }
 
-  // uploadImage($event:any){
-  //   const name = "proyecto_" + this.nombreP;
-  //   this.imageService.uploadImage($event, name)
-  // }
+  uploadImagen($event:any){
+    document.getElementById('imagen').innerHTML = '<img width="50px" src="../../../assets/cargando.gif">';
+    document.getElementById('imagen2').style.display = 'none';
+    var n = 0;
+    const name = "proyecto_" + n;
+    this.sProyecto.uploadImagen($event, name, n);
+    setTimeout(this.cambiarImagen,2500);
+  }
+  cambiarImagen(){
+    document.getElementById('imagen').style.display = 'none';
+    document.getElementById('imagen2').style.display = 'block';
+  }
 
 }

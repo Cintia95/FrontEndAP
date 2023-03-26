@@ -1,4 +1,4 @@
-<section class="vh-100 gradient-custom" *ngIf="proyecto">
+<section class="gradient-custom" *ngIf="proyecto">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -30,7 +30,11 @@
                     <label for="imgP">Captura</label>
                     <input type="file" class="form-control" id="imgP" name="imgP" [(ngModel)]="proyecto.imgP" (change)="uploadImagen($event)" accept=".jpg, .jpeg, .png" required>
                   </div>
-  
+                  <div class="form-outline mb-4" id="imagen">
+                  </div>
+                  <div class="form-outline mb-4" id="imagen2" style="display: none;">
+                    <img [src]="sProyecto.urlP" width="150px">
+                  </div>  
                   <button class="btn btn-primary text-white btn-lg btn-block" type="submit">Actualizar</button>
   
                 </form>

@@ -34,23 +34,27 @@ export class ProyectosService {
     return this.httpClient.delete<any>(this.URL + `delete/${id}`);
   }
 
-  public uploadImagen($event: any, name: string){
+  public uploadImagen($event: any, name: string, id: number){
     const file = $event.target.files[0]
     const imgRef = ref(this.storage, `proyectos/`+ name)
     uploadBytes(imgRef, file)
-    .then(response => {this.getImages()})
+    .then(response => {this.getImages(id)})
     .catch(error => console.log(error))
   }
 
-  getImages(){
+  getImages(id: number){
     const imagesRef = ref(this.storage, 'proyectos')
+    id;
+    var arrayURLs = new Array;
     list(imagesRef)
     .then(async response => {
       for(let item of response.items){
-        this.urlP = await getDownloadURL(item);
+        arrayURLs.push(await getDownloadURL(item));
       }
-      alert("Imagen subida")
+      this.urlP = arrayURLs[id]; 
+      console.log("La url de esta imagen es: " + this.urlP);
     })
     .catch(error => console.log(error))
   }
+
 }

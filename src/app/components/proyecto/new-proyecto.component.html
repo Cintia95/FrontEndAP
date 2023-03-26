@@ -26,10 +26,16 @@
                     <input type="text" class="form-control" id="enlaceP" name="enlaceP" [(ngModel)]="enlaceP" required>
                   </div>
 
-                  <!-- <div class="form-outline mb-4">
+                  <div class="form-outline mb-4">
                     <label for="imgP">Captura</label>
-                    <input type="file" class="form-control" id="imgP" name="imgP" [(ngModel)]="imgP" (change)="uploadImage($event)" accept=".jpg, .jpeg, .png" required>
-                  </div> -->
+                    <input type="file" class="form-control" id="imgP" name="imgP" [(ngModel)]="imgP" (change)="uploadImagen($event)" accept=".jpg, .jpeg, .png" required>
+                  </div>
+
+                  <div class="form-outline mb-4" id="imagen">
+                  </div>
+                  <div class="form-outline mb-4" id="imagen2">
+                    <img [src]="sProyecto.urlP" width="150px">
+                  </div>  
   
                   <button class="btn btn-primary text-white btn-lg btn-block" type="submit">Agregar proyecto</button>
   

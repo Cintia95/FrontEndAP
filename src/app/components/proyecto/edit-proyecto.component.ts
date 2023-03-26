@@ -12,7 +12,7 @@ import { ProyectosService } from 'src/app/service/proyectos.service';
 export class EditProyectoComponent implements OnInit{
   proyecto: Proyectos = null;
 
-  constructor(private sProyecto: ProyectosService, private activatedRouter: ActivatedRoute, private router: Router, public imageService: ImageService) { }
+  constructor(public sProyecto: ProyectosService, private activatedRouter: ActivatedRoute, private router: Router, public imageService: ImageService) { }
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
@@ -41,10 +41,16 @@ export class EditProyectoComponent implements OnInit{
   }
 
   uploadImagen($event:any){
-    alert("Espere un momento a que se suba la imagen");
+    document.getElementById('imagen').innerHTML = '<img width="50px" src="../../../assets/cargando.gif">';
+    document.getElementById('imagen2').style.display = 'none';
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "proyecto_" + id;
-    this.sProyecto.uploadImagen($event, name)
+    this.sProyecto.uploadImagen($event, name, id);
+    setTimeout(this.cambiarImagen,2500);
+  }
+  cambiarImagen(){
+    document.getElementById('imagen').style.display = 'none';
+    document.getElementById('imagen2').style.display = 'block';
   }
 
   
