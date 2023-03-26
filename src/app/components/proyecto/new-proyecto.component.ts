@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { getDownloadURL, list, Storage } from '@angular/fire/storage';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ref } from '@firebase/storage';
 import { Proyectos } from 'src/app/model/proyectos';
 import { ImageService } from 'src/app/service/image.service';
 import { ProyectosService } from 'src/app/service/proyectos.service';
@@ -44,7 +43,7 @@ export class NewProyectoComponent implements OnInit {
     var n = 0;
     const name = "proyecto_" + n;
     this.sProyecto.uploadImagen($event, name, n);
-    setTimeout(this.cambiarImagen,2500);
+    setTimeout(this.cambiarImagen,3500);
   }
   cambiarImagen(){
     document.getElementById('imagen').style.display = 'none';

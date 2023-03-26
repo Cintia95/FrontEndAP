@@ -46,7 +46,7 @@ export class EditProyectoComponent implements OnInit{
     const id = this.activatedRouter.snapshot.params['id'];
     const name = "proyecto_" + id;
     this.sProyecto.uploadImagen($event, name, id);
-    setTimeout(this.cambiarImagen,2500);
+    setTimeout(this.cambiarImagen,3500);
   }
   cambiarImagen(){
     document.getElementById('imagen').style.display = 'none';

@@ -44,7 +44,6 @@ export class ProyectosService {
 
   getImages(id: number){
     const imagesRef = ref(this.storage, 'proyectos')
-    id;
     var arrayURLs = new Array;
     list(imagesRef)
     .then(async response => {
@@ -52,7 +51,6 @@ export class ProyectosService {
         arrayURLs.push(await getDownloadURL(item));
       }
       this.urlP = arrayURLs[id]; 
-      console.log("La url de esta imagen es: " + this.urlP);
     })
     .catch(error => console.log(error))
   }
